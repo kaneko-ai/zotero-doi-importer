@@ -4,3 +4,4 @@ pyzotero
 requests
 python-dotenv
 feedparser
+apscheduler
