@@ -11,6 +11,6 @@ uvicorn main:app --reload
 ## 環境変数（.env）
 
 ```
-ZOTERO_API_KEY=your_api_key
-ZOTERO_USER_ID=your_user_id
+ZOTERO_API_KEY=Paper DOI 用
+ZOTERO_USER_ID=3hfwGmoRQX4ZMTXbP1Hl4TG8
 ```
