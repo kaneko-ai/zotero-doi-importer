@@ -62,3 +62,10 @@ def import_rss(request: RSSRequest):
     if not titles:
         raise HTTPException(status_code=404, detail="No titles found from RSS.")
     return import_dois(TitleList(titles=titles))
+
+from services.scheduler import start_scheduler
+
+@app.on_event("startup")
+def on_startup():
+    print("[INFO] Starting background scheduler...")
+    start_scheduler()
