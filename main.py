@@ -69,3 +69,12 @@ from services.scheduler import start_scheduler
 def on_startup():
     print("[INFO] Starting background scheduler...")
     start_scheduler()
+
+from fastapi.responses import FileResponse
+
+@app.get("/download")
+def download_csv():
+    file_path = "data/doi_log.csv"
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="DOI log not found.")
+    return FileResponse(file_path, media_type="text/csv", filename="doi_log.csv")
